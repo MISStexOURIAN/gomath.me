@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>GoMath.me | Math Facts Practice for Students</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Sofia|Merriweather|Roboto:900" rel="stylesheet">
+        <link href="quickMath.css" type="text/css" rel="stylesheet">
+        
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        
+    
+    </head>
+    
+    <body>
+    
+        <!-- Topbar -->
+        <header>
+        
+            <h1>Math Facts Practice for Students</h1>
+        
+        </header>
+        
+       <!-- Main body container -->     
+        <div class="main">
+            
+        <!-- Options div -->    
+            <div id="options" class="open">
+                
+                <h2>Options</h2>
+                    
+                <div class="optionsContainer">    
+                    <div class="optionsForms">    
+                        <form id="operations">
+                            <button form="operations" class="operationsButton selected" id="add">&#43;</button>
+                            <button form="operations" class="operationsButton" id="subtract">&ndash;</button>
+                            <span class="break"></span>
+                            <button form="operations" class="operationsButton" id="multiply">x</button>
+                            <button form="operations" class="operationsButton" id="divide">&divide;</button>
+
+
+                        </form>
+                    </div>
+
+
+
+                    <div class="optionsForms">
+                        <h3>Time <span class="extra">Limit (seconds)</span></h3>
+                        <form id="timeLimit">
+                            <button form="timeLimit" class="timeLimitButton selected" id="minute" value="60">60</button>
+                            <button form="timeLimit" class="timeLimitButton" id="minuteHalf" value="90">90</button>
+                            <span class="break"></span>
+                            <button form="timeLimit" class="timeLimitButton" id="twomin" value="120">120</button>
+                        </form>
+                    </div>
+
+
+
+                    <div class="optionsForms">
+                        <h3>Range</h3>
+                        <form id="range">
+                            <button form="range" class="rangeButton selected" id="ten">0-10</button>
+                            <span class="break"></span>
+                            <button form="range" class="rangeButton" id="twelve">0-12</button>
+                        </form>
+                    </div>
+
+
+                    <div class="optionsForms">
+                        <h3><span class="extra">Specific </span>Number</h3>
+                        <select class="custom-select">
+                            <option value="all">All</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+
+                        </select>
+                    </div>
+              
+                </div>  
+            </div>
+                
+            
+            <!-- Main div with card -->
+            <div id="mainContainer">
+                
+                <div id="timerContainer">
+                    
+                    <p id="timer"></p>
+                        
+                </div>
+                    
+                <input type="button" id="play" value="Play!">
+                    
+                <div id="card">                    
+                        
+                    <span id="topNumber">   </span>
+                    <span id="operation">  </span>
+                    <span id="bottomNumber">   </span>
+                    <hr>
+                    <form id="form" onsubmit="return false">
+                        <input type="text" id="answer" name="answer" autofocus autocomplete="off" maxlength="3">
+                        <div class="clearEnter">
+                            <input id="clear" type="button" value="Clear">
+                            <input id="enter" type="submit" onclick="" value="Enter">
+                        </div>
+                    
+                    </form>          
+                    
+                </div>
+                    
+                <div id="success"><span>Correct!</span></div>
+
+                <div id="wrong"><span>Wrong!<br>The answer is<br><span id="correctAnswer"></span>.</span>
+                </div>
+                
+                
+                
+                <div id="numberPad">
+                    <button class="number" type="button" value="1">1</button>
+                    <button class="number" type="button" value="2">2</button>
+                    <button class="number" type="button" value="3">3</button>
+                    <button class="number" type="button" value="4">4</button>
+                    <button class="number" type="button" value="5">5</button>
+                    <button class="number" type="button" value="6">6</button>
+                    <button class="number" type="button" value="7">7</button>
+                    <button class="number" type="button" value="8">8</button>
+                    <button class="number" type="button" value="9">9</button>
+                    <button class="number" type="button" value="0">0</button>      
+                
+                
+                </div>
+
+                <div id="stats">
+
+                    <p id="ansRight"><span id="numRight"></span> correct</p>
+                    <span class="break"></span>
+                    <p id="ansWrong"><span id="numWrong"></span> wrong</p>
+                    <span class="break"></span>
+                    <p id="percent"><span id="grade"></span>%</p>
+
+                </div>
+                    
+                    
+                </div>
+            
+            
+            </div>
+            
+     
+        
+        
+        
+      
+    
+    
+    
+    
+        <!--Javascript File Here-->
+        <script src="quickMath.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!--[if lt IE 9]>
+        <script src="dist/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+        
+        
+    </body>
+
+
+
+</html>
